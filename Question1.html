@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FoodHub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🍔 FoodHub</div>
+    <nav class="menu">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Foods</a>
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+    </nav>
+    <div class="auth-buttons">
+      <button>Sign In</button>
+      <button class="primary">Sign Up</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Delicious Meals <span>Delivered</span> to Your Door</h1>
+      <p>Enjoy fresh, flavorful meals made with the finest ingredients, delivered straight to your door.</p>
+      <div class="hero-buttons">
+        <button class="primary">Order Now</button>
+        <button>Learn More</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Burger Delivery" />
+    </div>
+  </section>
+
+  <section class="popular-items">
+    <h2>Our <span>Popular</span> Items</h2>
+    <div class="items">
+      <div class="item-card">
+        <h3>Four Cheese Pizza</h3>
+        <p>Free delivery for first order</p>
+        <button>Order Now</button>
+      </div>
+      <div class="item-card">
+        <h3>Margherita Pizza</h3>
+        <p>Flat 25% off on Sunday</p>
+        <button>Order Now</button>
+      </div>
+      <div class="item-card">
+        <h3>Hot Dog</h3>
+        <p>Buy 2 get 1 free</p>
+        <button>Order Now</button>
+      </div>
+      <div class="item-card">
+        <h3>Burger King</h3>
+        <p>Free delivery for first order</p>
+        <button>Order Now</button>
+      </div>
+    </div>
+  </section>
+  <style>
+    *{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background: #fff;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF5722;
+}
+
+.menu a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.auth-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.auth-buttons .primary {
+  background: #FF5722;
+  color: white;
+}
+
+.hero {
+  display: flex;
+  padding: 40px;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff4ec;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.hero-text span {
+  color: #FF5722;
+}
+
+.hero-text p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.hero-buttons button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero-buttons .primary {
+  background: #FF5722;
+  color: white;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image img {
+  width: 250px;
+}
+
+.popular-items {
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+
+.popular-items h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.popular-items span {
+  color: #FF5722;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.item-card {
+  flex: 1 1 200px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.item-card button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #FF5722;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+  </style>
+</body>
+</html>
