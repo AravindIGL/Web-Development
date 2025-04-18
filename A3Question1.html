@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI & UX Designer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  background: #f5f7fa;
+  color: #333;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  font-style: oblique;
+  color: #0d6efd;
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.contact {
+  font-weight: bold;
+  color: #f97316;
+}
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 50px;
+    background: linear-gradient(to right, #d1fae5, #fef3c7);
+}
+.intro {
+  max-width: 50%;
+}
+.greeting {
+  color: #f97316;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.intro h1 {
+  font-size: 36px;
+  color: #1f2937;
+}
+.intro span {
+  color: #4f46e5;
+}
+.description {
+  margin: 20px 0;
+  font-size: 16px;
+  color: #4b5563;
+}
+button {
+    padding: 10px 20px;
+    background-color: #f97316;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.image img{
+    max-width: 400px;
+    border-radius: 10px;
+}
+</style>
+<body>
+  <header>
+    <div class="logo">FOLIO</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="contact">
+      📞 +88019 (383) 382
+    </div>
+  </header>
+
+  <section class="main">
+    <div class="intro">
+      <p class="greeting">NICE TO MEET YOU</p>
+      <h1>Hi,I'm Shamim<br><span>UI & UX Designer</span></h1>
+      <p class="description">Hey, are you looking for a designer to build your Brand and grow<br> your business? Let's shake hands with me.</p>
+      <button>Download My CV</button>
+    </div>
+    <div class="image">
+      <img src="..//businessman-white-background_693425-12075.jpg" alt="Designer Photo">
+    </div>
+  </section>
+</body>
+</html>
