@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy More</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      grid-template-rows: auto 1fr;
+      height: 100vh;
+    }
+    .sidebar {
+      background-color: #ffffff;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+    }
+    .sidebar .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .menu {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+    .menu li {
+      margin-bottom: 15px;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .quick-action button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+    }
+    .quick-action button:hover {
+      background-color: #0056b3;
+    }
+    .last-orders p {
+      margin-top: 20px;
+    }
+    .last-orders a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .logout {
+      background-color: #f44336;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+    }
+    .logout:hover {
+      background-color: #e53935;
+    }
+    .main-content {
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+    .profile span {
+      margin-right: 10px;
+    }
+    .cart {
+      display: flex;
+      align-items: center;
+    }
+    .cart span {
+      margin-left: 5px;
+      font-weight: bold;
+    }
+    .explore {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .explore-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .explore-header h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .filters button {
+      margin-left: 10px;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .filters button:hover {
+      background-color: #0056b3;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background-color: #fafafa;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card.offer {
+      background-color: #d3f9d8;
+    }
+    .card h3 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .card span {
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #555;
+    }
+    .card button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .card button:hover {
+      background-color: #0056b3;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">BuyMore</div>
+      <ul class="menu">
+        <li><a href="#">Popular Products</a></li>
+        <li><a href="#">Explore New</a></li>
+        <li><a href="#">Clothing and Shoes</a></li>
+        <li><a href="#">Gifts and Living</a></li>
+        <li><a href="#">Inspiration</a></li>
+      </ul>
+      <div class="quick-action">
+        <button>Request for product</button>
+        <button>Add member</button>
+      </div>
+      <div class="last-orders">
+        <p>Last orders 37</p>
+        <p><a href="#">DXC Nike...view order</a></p>
+        <p><a href="#">Outerwear...view order</a></p>
+      </div>
+      <button class="logout">Log out</button>
+    </aside>
+    <main class="main-content">
+      <div class="header">
+        <span>37 Orders | Last 7 days</span>
+        <div class="profile">
+          <span>Ryana</span>
+          <div class="cart">
+            <span>Cart</span>
+            <span>+8</span>
+          </div>
+        </div>
+      </div>
+      <section class="explore">
+        <div class="explore-header">
+          <h2>Explore</h2>
+          <div class="filters">
+            <button>All</button>
+            <button>Men</button>
+            <button>Women</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card offer">
+            <h3>GET UP TO 50% OFF</h3>
+            <button>Get Discount</button>
+          </div>
+          <div class="card product">
+            <img src="..//pexels-photo-346752.jpg" alt="Winter’s weekend" />
+            <h3>Winter’s weekend</h3>
+            <p>keep it casual</p>
+          </div>
+          <div class="card product">
+            <img src="..//cheerful-happy-woman-enjoying-shopping-260nw-1417347668.jpg" alt="WMX Rubber Zebra sandal" />
+            <h3>WMX Rubber Zebra sandal</h3>
+            <span>$36</span>
+          </div>
+          <div class="card product">
+            <img src="..//istockphoto-470846314-612x612.jpg" alt="Super Skinny jogger" />
+            <h3>Super Skinny jogger in brown</h3>
+            <span>$89</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
