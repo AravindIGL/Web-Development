@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Shop App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter',sans-serif;
+    }
+    body{
+        background-color: #f9f9f9;
+        padding: 1rem;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    .Search{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    input[type="text"]{
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+    }
+    .Banner{
+        background: #ffeccc;
+        border-radius: 20px;
+        padding: 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .products{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem ;
+    }
+    .product{
+        background: #fff;
+        border-radius: 16px;
+        padding: 0.75rem;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .product h4 {
+      font-size: 1rem;
+      margin: 0.5rem 0 0.25rem;
+    }
+    .product p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .price {
+      font-weight: bold;
+      color: #f7931e;
+    }
+    .add-cart {
+      display: inline-block;
+      background: #f7931e;
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem 0;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+    }
+    .navbar i {
+      font-size: 1.2rem;
+      color: #f7931e;
+    }
+    @media screen and (min-width: 768px) {
+      body {
+        max-width: 480px;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+  <body>
+    <div class="Header">
+        <h2>Discover</h2>
+        <i class="menu">☰</i>
+    </div>
+    <div class="Search">
+        <input type="text" placeholder="Search Product"/>
+    </div>
+    <div class="Banner">
+        <h3>New Arrival</h3>
+        <p>Save Up To <strong>49%</strong>+ Free Delivery</p>
+    </div>
+    <div class="products">
+        <div class="product">
+          <img src="..//ad70fd15-271b-4676-acb9-547ba4b8a6dd.jpg" alt="Shirt" />
+          <h4>Men's Shirt</h4>
+          <p class="price">$24.00</p>
+          <div class="add-cart">Add Cart</div>
+        </div>
+        <div class="product">
+          <img src="..//yepme.jpg" alt="Dress" />
+          <h4>Red Dress</h4>
+          <p class="price">$24.00</p>
+          <div class="add-cart">Add Cart</div>
+        </div>
+      </div>
+    <div class="navbar">
+        <i>🏠</i>
+        <i>🔎</i>
+        <i>❤️</i>
+        <i>🛒</i>
+        <i>👤</i>
+    </div>
+    <script>
+            document.querySelectorAll('.add-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Item added to cart!');
+      });
+    });
+    </script>
+  </body>
+</html>
