@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile App UI UX Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8fb;
+    }
+    .app-container {
+      max-width: 400px;
+      margin: auto;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .header {
+      position: relative;
+    }
+    .header img {
+      width: 100%;
+      border-bottom: 1px solid #ccc;
+    }
+    .price-tag {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: #a084e8;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      animation: popIn 0.5s ease-in-out;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .content {
+      padding: 16px;
+    }
+    h2 {
+      margin: 0;
+    }
+    .rating, .info-boxes, .tabs {
+      margin-top: 10px;
+    }
+    .info-boxes {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .info-box {
+      background: #e6e1f5;
+      padding: 8px;
+      border-radius: 10px;
+      flex: 1;
+      margin: 0 4px;
+      font-size: 14px;
+      transition: transform 0.2s ease;
+    }
+    .info-box:hover {
+      transform: scale(1.05);
+      background: #d5ccf2;
+    }
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0 10px;
+    }
+    .tab {
+      font-weight: 600;
+      cursor: pointer;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .tab.active {
+      border-color: black;
+      color: #a084e8;
+    }
+    .section {
+      font-size: 14px;
+      line-height: 1.5;
+      display: none;
+      animation: fadeContent 0.4s ease-in-out;
+    }
+    .section.active {
+      display: block;
+    }
+    @keyframes fadeContent {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .rating-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .rating-bar span:first-child {
+      width: 20px;
+    }
+    .rating-bar .bar {
+      flex: 1;
+      background-color: #e0d9f6;
+      border-radius: 10px;
+      height: 8px;
+      margin: 0 10px;
+      overflow: hidden;
+    }
+    .rating-bar .fill {
+      height: 100%;
+      background-color: #a084e8;
+      border-radius: 10px;
+    }
+    .review {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 12px;
+    }
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .review-content {
+      font-size: 14px;
+    }
+    .review-content .stars {
+      color: #f4b400;
+    }
+    .enroll {
+      text-align: center;
+      padding: 16px;
+      background: #a084e8;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 0 0 20px 20px;
+      transition: background 0.3s ease;
+    }
+    .enroll:hover {
+      background: #8e72d6;
+    }
+    .enroll:active {
+      background: #7d65c7;
+    }
+    .lesson-item {
+      display: flex;
+      align-items: center;
+      background: #f3f0fb;
+      padding: 10px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(160, 132, 232, 0.1);
+      transition: transform 0.2s ease;
+    }
+    .lesson-item:hover {
+      transform: scale(1.02);
+    }
+    .lesson-thumb {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-right: 12px;
+    }
+    .lesson-info {
+      flex: 1;
+      font-size: 14px;
+    }
+    .lesson-info strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .lesson-play {
+      font-size: 20px;
+      color: #a084e8;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 300px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <img src="..//wp11742795.jpg" alt="Course Header" />
+      <div class="price-tag">$75.00</div>
+    </div>
+    <div class="content">
+      <h2>Mobile App UI UX</h2>
+      <div class="rating">
+        ⭐ 4.7 (4,579 reviews) <strong>Design</strong>
+      </div>
+      <div class="info-boxes">
+        <div class="info-box">8,182 students</div>
+        <div class="info-box">3.5 hours</div>
+        <div class="info-box">Certificate</div>
+      </div>
+      <div class="tabs">
+        <div class="tab active" data-tab="about">About</div>
+        <div class="tab" data-tab="lessons">Lessons</div>
+        <div class="tab" data-tab="reviews">Reviews</div>
+      </div>
+      <div class="section active" id="about">
+        <strong>Md Shakil</strong> - UI/UX Designer<br/><br/>
+        Flows figjam bold outline background component edit. Object inspect community ellipse library.
+        Asset team component pencil italic library fill. Horizontal horizontal community hand distribute background ellipse outline blur...
+      </div>
+      <div class="section" id="lessons">
+        <div class="lesson-item">
+          <img src="..//OIP3.jpg" class="lesson-thumb" alt="Lesson 1 Thumbnail">
+          <div class="lesson-info">
+            <strong>Developing checker style</strong>
+            <p>18:02 mins</p>
+          </div>
+          <div class="lesson-play">▶</div>
+        </div>
+        <div class="lesson-item">
+          <img src="..//OIP3.jpg" class="lesson-thumb" alt="Lesson 2 Thumbnail">
+          <div class="lesson-info">
+            <strong>Developing checker style</strong>
+            <p>18:02 mins</p>
+          </div>
+          <div class="lesson-play">▶</div>
+        </div>
+      </div>
+      <div class="section" id="reviews">
+        <strong style="font-size: 20px;">4.8 ★★★★★</strong> (107 Reviews)<br/><br/>
+        <div class="rating-bar"><span>5</span><div class="bar"><div class="fill" style="width: 70%"></div></div><span>70%</span></div>
+        <div class="rating-bar"><span>4</span><div class="bar"><div class="fill" style="width: 55%"></div></div><span>55%</span></div>
+        <div class="rating-bar"><span>3</span><div class="bar"><div class="fill" style="width: 42%"></div></div><span>42%</span></div>
+        <div class="rating-bar"><span>2</span><div class="bar"><div class="fill" style="width: 30%"></div></div><span>30%</span></div>
+        <div class="rating-bar"><span>1</span><div class="bar"><div class="fill" style="width: 10%"></div></div><span>10%</span></div>
+
+        <div class="review">
+          <img src="https://i.pravatar.cc/50?img=3" alt="User" class="avatar" />
+          <div class="review-content">
+            <strong>Md Shakil</strong>
+            <div class="stars">⭐ 4.7</div>
+            <p>Library plugin italic figma inspect figjam. Plugin horizontal pixel link layout group resizing scrolling union. Slice line pen align opacity star pixel main.</p>
+            <small>3 Minutes ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="enroll" id="enrollBtn">Enroll Course - $75.00</div>
+  </div>
+  <div id="enrollModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <p>You have enrolled successfully!</p>
+    </div>
+  </div>
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const sections = document.querySelectorAll('.section');
+    const enrollBtn = document.getElementById('enrollBtn');
+    const modal = document.getElementById('enrollModal');
+    const closeModal = document.getElementById('closeModal');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+    enrollBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+    window.addEventListener('click', (e) => {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
