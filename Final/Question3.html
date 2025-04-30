@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jully Baby Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .app-container {
+      max-width: 420px;
+      margin: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background: #a7e6e5;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      color: #6a1b9a;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      background: #f0f0f0;
+      border-top: 1px solid #ccc;
+    }
+
+    .tabs button {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      background: #f0f0f0;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .tabs button.active {
+      background: #6a1b9a;
+      color: #fff;
+    }
+
+    .tab-content {
+      padding: 20px;
+    }
+
+    .product {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      background: #fff;
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .checkout-btn {
+      margin-top: 20px;
+      display: block;
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #6a1b9a;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .order-status, .profile {
+      font-size: 16px;
+    }
+
+    .edit-form {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .edit-form input, .search-bar input, .filter-select select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-bar, .filter-select {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <h1>Jully Baby Store</h1>
+    </div>
+
+    <div class="tabs">
+      <button class="active" onclick="showTab('home', this)">Home</button>
+      <button onclick="showTab('cart', this)">Cart</button>
+      <button onclick="showTab('orders', this)">Orders</button>
+      <button onclick="showTab('profile', this)">Profile</button>
+    </div>
+
+    <!-- Existing tab-content elements -->
+    <!-- Add content sections for each tab here -->
+
+  </div>
+
+  <script>
+    function showTab(tabId, btn) {
+      // This function would show the selected tab's content
+      // For now, placeholder only
+      alert(`Switching to ${tabId} tab`);
+    }
+  </script>
+</body>
+</html>
